@@ -1,12 +1,81 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
   <html>
   <head>
-      <meta http-equiv="refresh" content="0; url=./dist/index.html">
       <title>Grab GenAI Navigator</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              background: linear-gradient(135deg, #667eea 0%,
+  #764ba2 100%);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+              margin: 0;
+          }
+          .login-box {
+              background: white;
+              padding: 40px;
+              border-radius: 10px;
+              box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+              text-align: center;
+              max-width: 400px;
+          }
+          input[type="password"] {
+              padding: 12px;
+              border: 1px solid #ddd;
+              border-radius: 5px;
+              width: 200px;
+              margin: 10px;
+              font-size: 16px;
+          }
+          button {
+              padding: 12px 30px;
+              background: #667eea;
+              color: white;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              font-size: 16px;
+          }
+          button:hover {
+              background: #5a67d8;
+          }
+          .error {
+              color: red;
+              margin-top: 10px;
+          }
+      </style>
   </head>
   <body>
-      <p>Redirecting to Grab GenAI Navigator...</p>
-      <p>If not redirected, <a href="./dist/index.html">click
-  here</a></p>
+      <div class="login-box">
+          <h2>🚀 Grab GenAI Navigator</h2>
+          <p>Anthropic x Grab Strategic Demo</p>
+          <input type="password" id="password" placeholder="Enter 
+  password" onkeyup="checkEnter(event)">
+          <br>
+          <button onclick="checkPassword()">Access Demo</button>
+          <div id="error" class="error"></div>
+      </div>
+
+      <script>
+          function checkPassword() {
+              const password =
+  document.getElementById('password').value;
+              if (password === 'claude') {
+                  window.location.href = './dist/index.html';
+              } else {
+                  document.getElementById('error').textContent =
+  'Incorrect password. Please try again.';
+              }
+          }
+
+          function checkEnter(event) {
+              if (event.key === 'Enter') {
+                  checkPassword();
+              }
+          }
+      </script>
   </body>
   </html>
+
