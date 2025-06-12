@@ -1,4 +1,4 @@
- # Simple workflow for deploying static content to GitHub Pages
+# Simple workflow for deploying static content to GitHub Pages
   name: Deploy static content to Pages
 
   on:
@@ -10,7 +10,7 @@
     workflow_dispatch:
 
   # Sets permissions of the GITHUB_TOKEN to allow deployment to 
-  #GitHub Pages
+  GitHub Pages
   permissions:
     contents: read
     pages: write
